@@ -35,6 +35,28 @@ def accessInventory(screen):
 
   currInventory = inventory.getInventory()
 
+  """
+  # Only show inventory images if user has previously bought the item.
+  for stock in currInventory:
+    if stock[1] == True:
+      if stock[0] == "hat":
+        image_hat = pygame.image.load("Resources/baseballcap.png")
+        image_hat = pygame.transform.scale(image_hat, (76, 47))
+        screen.blit(image_hat, [33, 132])
+      elif stock[0] == "tie":
+        image_tie = pygame.image.load("Resources/tie.png")
+        image_tie = pygame.transform.scale(image_tie, (55, 78))
+        screen.blit(image_tie, [44, 238])
+      elif stock[0] == "bow tie":
+        image_bowTie = pygame.image.load("Resources/bowtie.png")
+        image_bowTie = pygame.transform.scale(image_bowTie, (77, 39))
+        screen.blit(image_bowTie, [265, 136])
+      elif stock[0] == "bow":
+        image_hairBow = pygame.image.load("Resources/hairbow.png")
+        image_hairBow = pygame.transform.scale(image_hairBow, (75, 52))
+        screen.blit(image_hairBow, [151, 130])
+  """
+
   # defining a font
   smallfont = pygame.font.SysFont('Corbel', 35)
 
