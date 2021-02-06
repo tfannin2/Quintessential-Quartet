@@ -13,7 +13,7 @@ def visitPointStore():
     global points
 
     #Display shopkeep and opening message
-    print("Hello there! We have many wares that will \n")
+    print("Hello there! We have many wares that will")
     print("make your dog the talk of the town!\n")
     #clear screen somehow.
     print("What would you like?")
