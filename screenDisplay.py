@@ -12,6 +12,6 @@ screen = pygame.display.set_mode(res)
 # set the pygame window name
 pygame.display.set_caption('Image')
 
-# create switch() function that allows the background image to change with called
+# create switch_background() function that allows the background image to change with called
 def switch_background(display_screen):
   return switcher.get(display_screen, home)
