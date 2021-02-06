@@ -15,16 +15,16 @@ switcher_background{
 }
 
 # inventory images
-hat = pygame.images.load("resources/hat.png")
-bow = pygame.images.load("resources/bow.png")
-tie = pygame.images.load("resources/tie.png")
-bowtie = pygames.image.load("resources/bowtie.png")
+hat_im = pygame.images.load("resources/hat.png")
+bow_im = pygame.images.load("resources/bow.png")
+tie_im = pygame.images.load("resources/tie.png")
+bowtie_im = pygames.image.load("resources/bowtie.png")
 
-switcher_background{
-  1: hat,
-  2: bow,
-  3: tie,
-  4: bowtie
+switcher_inventory{
+  1: hat_im,
+  2: bow_im,
+  3: tie_im,
+  4: bowtie_im
 }
 
 # points images
