@@ -1,3 +1,6 @@
+# import pygame
+import pygame
+
 # background images
 welcome = pygame.image.load("resources/welcome.png")
 home = pygame.image.load("resources/home.png")
