@@ -2,6 +2,7 @@ import pygame
 import sys
 import points
 import math
+#import screenDisplay
 
 pygame.init()
 
@@ -26,16 +27,16 @@ actionButtonWidthBuffer = math.floor(actionButtonWidth / 4)
 actionButtonHeight = math.floor((height / 4) / 3)
 actionButtonHeightBuffer = math.floor(actionButtonHeight / 2)
 
-#Therefore, the button locations are as follows
-topThreeLine = [actionButtonHeightBuffer, (actionButtonHeightBuffer + actionButtonHeight)]
-medidtateLine = [(topThreeLine[1] + actionButtonHeightBuffer), (topThreeLine[1] * 2 )]
-waterButton = [actionButtonWidthBuffer, (actionButtonWidth + actionButtonWidthBuffer)]
-eatButton = [(waterButton[1] + actionButtonWidthBuffer), (waterButton[1] * 2)]
-exerciseButton = [(eatButton[1] + actionButtonWidthBuffer), (width - actionButtonWidthBuffer)]
+#Button locations
+topThreeLine = [15, 39]
+medidtateLine = [64, 103]
+waterButton = [8, 121]
+eatButton = [131, 244]
+exerciseButton = [254,367]
 meditateButton = [eatButton[0], eatButton[1]]
-
-bottomThreeVertical = [actionButtonWidthBuffer, (width - actionButtonWidthBuffer)]
-
+dailyQuoteButton = [8, 367, 448, 493]
+storeButton = [8,177,580,625]
+inventoryButton = [198, 367, 580, 625]
 
 
 
@@ -85,7 +86,16 @@ while True:
             if meditateButton[0] <= mouse[0] <= meditateButton[1] and medidtateLine[0] <= mouse[1] <= medidtateLine[1]:
                 points.meditate()
             #Daily Quote Reveal
+            if dailyQuoteButton[0] <= mouse[0] <= dailyQuoteButton[1] and dailyQuoteButton[2] <= mouse[1] <= dailyQuoteButton[3]:
+                points.daily_quote()
             #Store
+            if storeButton[0] <= mouse[0] <= storeButton[1] and storeButton[2] <= mouse[1] <= storeButton[3]:
+                #screenDisplay.switch(6)
+                x = 1
+            #Inventory
+            if inventoryButton[0] <= mouse[0] <= inventoryButton[1] and inventoryButton[2] <= mouse[1] <= inventoryButton[3]:
+                #call inventory display
+                x = 0
     
 
                   
@@ -96,43 +106,44 @@ while True:
     # the variable as a tuple 
     mouse = pygame.mouse.get_pos()
 
-    
+    """
     # if mouse is hovered on a button it 
     # changes to lighter shade 
     #Water Button
     if ((waterButton[0] <= mouse[0] <= waterButton[1])  and (topThreeLine[0] <= mouse[1] <= topThreeLine[1]), 3): 
-        pygame.draw.rect(screen,color_light,[waterButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight], 3) #water
-        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight], 3) #eat
-        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight], 3) #exercise
-        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,actionButtonWidth,actionButtonHeight], 3) #meditate
+        pygame.draw.rect(screen,color_light,[waterButton[0],topThreeLine[0],113,39], 3) #water
+        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],113,39], 3) #eat
+        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],113,39], 3) #exercise
+        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,113,39], 3) #meditate
     #Eat
     elif eatButton[0] <= mouse[0] <= eatButton[1] and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #water
-        pygame.draw.rect(screen,color_light,[eatButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #eat
-        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #exercise
-        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,actionButtonWidth,actionButtonHeight],3) #meditate
+        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],113,39],3) #water
+        pygame.draw.rect(screen,color_light,[eatButton[0],topThreeLine[0],113,39],3) #eat
+        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],113,39],3) #exercise
+        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,113,39],3) #meditate
     #Exercise
     elif exerciseButton[0] <= mouse[0] <= exerciseButton[1] and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #water
-        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3 ) #eat
-        pygame.draw.rect(screen,color_light,[exerciseButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3 )  #exercise
-        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,actionButtonWidth,actionButtonHeight],3 ) #meditate
+        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],113,39],3) #water
+        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],113,39],3 ) #eat
+        pygame.draw.rect(screen,color_light,[exerciseButton[0],topThreeLine[0],113,39],3 )  #exercise
+        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,113,39],3 ) #meditate
     #Meditate
     elif meditateButton[0] <= mouse[0] <= meditateButton[1] and medidtateLine[0] <= mouse[1] <= medidtateLine[1]:
-        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #water
-        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #eat
-        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #exercise
-        pygame.draw.rect(screen,color_light,[meditateButton[0], medidtateLine[0] ,actionButtonWidth,actionButtonHeight],3) #meditate
+        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],113,39],3) #water
+        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0], 113 ,39],3) #eat
+        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],113,39],3) #exercise
+        pygame.draw.rect(screen,color_light,[meditateButton[0], medidtateLine[0] ,113 ,39],3) #meditate
     
     else: #Draw all the rectangles
-        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #water
-        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3) #eat
-        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],actionButtonWidth,actionButtonHeight],3 ) #exercise
-        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,actionButtonWidth,actionButtonHeight,3]) #meditate
-    
+        pygame.draw.rect(screen,color_dark,[waterButton[0],topThreeLine[0],113,39],3) #water
+        pygame.draw.rect(screen,color_dark,[eatButton[0],topThreeLine[0],113,39],3) #eat
+        pygame.draw.rect(screen,color_dark,[exerciseButton[0],topThreeLine[0],113,39],3 ) #exercise
+        pygame.draw.rect(screen,color_dark,[meditateButton[0], medidtateLine[0] ,113,39,3]) #meditate
+    """
       
     # superimposing the text onto our button 
     #screen.blit(water , (width/2+50,height/2)) 
+    pointsText = smallfont.render(points.displayPonts(), True, color)
     screen.blit(pointsText, (width/2+50, height/2 + height/4 + 15))
       
     # updates the frames of the game 
