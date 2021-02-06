@@ -1,36 +1,41 @@
 # import pygame and points images
 import pygame
 import images
+import random
 
 # global variables
-global user_points = 0
-woke = false                # PROBABLY RESETS EVERYTIME APP IS EXITED... FIX LATER
+global user_points
+user_points = 0
+#woke = false                # PROBABLY RESETS EVERYTIME APP IS EXITED... FIX LATER
 
 # points awarded to the user for actions they complete
-def drank_water():
+def drank_water(screen):
     global user_points
     user_points += 10
-    screen.blit(water,[32,343])     # locations inputted as [X,Y]
+    screen.blit(pygame.image.load("Resources/bowl.png"),[32,343])     # locations inputted as [X,Y]
+    pygame.display.update()
 
-def ate_food():
+def ate_food(screen):
     global user_points
     user_points += 10
-    screen.blit(food,[92,175])
+    screen.blit(pygame.image.load("Resources/bone.png"),[92,175])
 
-def exercise():
+def exercise(screen):
     global user_points
     user_points += 5
-    screen.blit(exercise,[44,150])
+    screen.blit(pygame.image.load("Resources/exercise.png"),[44,150])
 
-def meditate():
+def meditate(screen):
     global user_points
     user_points += 5
-    screen.blit(meditate,[8,126])
+    screen.blit(pygame.image.load("Resources/Dog on rug.png"),[8,126])
 
 def daily_quote():
+    """
     if !woke :
         user_points += 1
         woke = true
+    """
     #TODO: only allow points once a day
     quotesList = ["Whatever makes you happy, put that in your world.","We don't make mistakes, just happy little accidents.","Talent is a pursued interest.","The secret to doing anything is believing you can do it."]
     quotesIndex = random.randint(0,(len(quotesList) - 1))

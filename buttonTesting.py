@@ -4,6 +4,7 @@ import points
 import math
 #import screenDisplay
 import inventory
+import storeButtons
 
 pygame.init()
 
@@ -55,7 +56,7 @@ pointsText = smallfont.render(points.displayPonts(), True, color)
 
 
 #Test home screen image
-image = pygame.image.load(r'C:\Users\gmham\git-repos\quin\Quintessential-Quartet\Home.jpg')
+image = pygame.image.load('Resources/Home.png')
 
   
 while True: 
@@ -80,16 +81,16 @@ while True:
             #Buttons!
             #Water
             if waterButton[0] <= mouse[0] <= waterButton[1]  and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-                points.drank_water() 
+                points.drank_water(screen) 
             #Eat
             if eatButton[0] <= mouse[0] <= eatButton[1] and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-                points.ate_food()
+                points.ate_food(screen)
             #Exercise
             if exerciseButton[0] <= mouse[0] <= exerciseButton[1] and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-                points.exercise()
+                points.exercise(screen)
             #Meditate
             if meditateButton[0] <= mouse[0] <= meditateButton[1] and medidtateLine[0] <= mouse[1] <= medidtateLine[1]:
-                points.meditate()
+                points.meditate(screen)
             #Daily Quote Reveal
             if dailyQuoteButton[0] <= mouse[0] <= dailyQuoteButton[1] and dailyQuoteButton[2] <= mouse[1] <= dailyQuoteButton[3]:
                 quote = points.daily_quote()
@@ -108,7 +109,7 @@ while True:
             #Store
             if storeButton[0] <= mouse[0] <= storeButton[1] and storeButton[2] <= mouse[1] <= storeButton[3]:
                 #screenDisplay.switch(6)
-                x = 1
+                storeButtons.accessStore(screen)
             #Inventory
             if inventoryButton[0] <= mouse[0] <= inventoryButton[1] and inventoryButton[2] <= mouse[1] <= inventoryButton[3]:
                 inventory.displayInventory()
