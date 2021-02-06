@@ -8,9 +8,14 @@ import points
 
 def initializeInventory(): # ("item",bought,wearing)
     global inventory
-    inventory = [("hat", False, False), ("tie", False, False), ("bow tie", False, False), ("bow", False, False)]
+    inventory = [["hat", False, False], ["tie", False, False],["bow tie", False, False], ["bow", False, False]]
 
 
+
+def getInventory():
+    global inventory
+    return inventory
+    
 def makePurchase(item, cost):
     global inventory
     for stock in inventory:
@@ -23,7 +28,7 @@ def makePurchase(item, cost):
         elif stock[0] == item and stock[1] == True:
             return "previously bought"
 
-
+"""
 def displayInventory():
     #display inventory base image
 
@@ -32,3 +37,4 @@ def displayInventory():
         if stock[1] == True:
             #displayItem(stock[0])
             x = 1
+"""
