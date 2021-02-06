@@ -2,11 +2,26 @@
 import pygame
 import images
 import random
+import datetime
 
 # global variables
 global user_points
 user_points = 0
-#woke = false                # PROBABLY RESETS EVERYTIME APP IS EXITED... FIX LATER
+
+global quotesList
+quotesList = []
+
+def initializeQuotesVariables():
+    global quotesList
+    quotesList = ["Whatever makes you happy, put that in your world.","We don't make mistakes, just happy little accidents.","Talent is a pursued interest.","The secret to doing anything is believing you can do it."]
+
+    global quotesIndex
+    quotesIndex = random.randint(0,(len(quotesList) - 1))
+
+    global currentDate
+    currentDate = datetime.date.today()
+    currentDate += datetime.timedelta(days=1)
+
 
 # points awarded to the user for actions they complete
 def drank_water(screen):
@@ -31,17 +46,16 @@ def meditate(screen):
     screen.blit(pygame.image.load("Resources/Dog on rug.png"),[8,126])
 
 def daily_quote():
-    """
-    if !woke :
-        user_points += 1
-        woke = true
-    """
-    #TODO: only allow points once a day
-    quotesList = ["Whatever makes you happy, put that in your world.","We don't make mistakes, just happy little accidents.","Talent is a pursued interest.","The secret to doing anything is believing you can do it."]
-    quotesIndex = random.randint(0,(len(quotesList) - 1))
+    #TODO: only allow points once a day 
+    global currentDate
+    global quotesList
+    if datetime.date.today() != currentDate:
+        global quotesIndex
+        quotesIndex = random.randint(0,(len(quotesList) - 1))
+        currentDate =  datetime.date.today()
 
-    global user_points
-    user_points += 1
+        global user_points
+        user_points += 1
 
     return quotesList[quotesIndex]
 

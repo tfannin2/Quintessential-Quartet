@@ -26,6 +26,9 @@ height = screen.get_height()
 #set up inventory for later
 inventory.initializeInventory()
 
+#Set up quotes variables
+points.initializeQuotesVariables()
+
 ####Calculating the button sizing#####
 #Top four buttons
 actionButtonWidth = math.floor(width / 4)
