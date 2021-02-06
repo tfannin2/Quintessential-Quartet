@@ -1,3 +1,5 @@
+import random
+
 # Global variables
 global user_points
 user_points = 0
@@ -20,8 +22,14 @@ def meditate():
     user_points += 5
 
 def daily_quote():
+    #TODO: only allow points once a day
+    quotesList = ["Whatever makes you happy, put that in your world.","We don't make mistakes, just happy little accidents.","Talent is a pursued interest.","The secret to doing anything is believing you can do it."]
+    quotesIndex = random.randint(0,(len(quotesList) - 1))
+
     global user_points
     user_points += 1
+
+    return quotesList[quotesIndex]
 
 #Updates the points display on the dog screen
 def displayPonts():

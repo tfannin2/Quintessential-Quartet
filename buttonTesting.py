@@ -21,6 +21,9 @@ width = screen.get_width()
 
 height = screen.get_height()
 
+#set up inventory for later
+inventory.initializeInventory()
+
 ####Calculating the button sizing#####
 #Top four buttons
 actionButtonWidth = math.floor(width / 4)
@@ -42,7 +45,8 @@ inventoryButton = [198, 367, 580, 625]
 
 
 # defining a font 
-smallfont = pygame.font.SysFont('Corbel',35) 
+smallfont = pygame.font.SysFont('Corbel',35)
+quoteFont = pygame.font.SysFont('Corbel', 16) 
   
 # rendering a text written in 
 # this font 
@@ -88,7 +92,19 @@ while True:
                 points.meditate()
             #Daily Quote Reveal
             if dailyQuoteButton[0] <= mouse[0] <= dailyQuoteButton[1] and dailyQuoteButton[2] <= mouse[1] <= dailyQuoteButton[3]:
-                points.daily_quote()
+                quote = points.daily_quote()
+                quoteText = quoteFont.render(quote, True, color)
+                screen.fill((255,255,255))
+                pygame.draw.rect(screen,(173,211,173),[10,(screen.get_height()/2 -30),355,80])
+                screen.blit(quoteText, (20, (screen.get_height()/2)))
+                pygame.display.update()
+                while True:
+                    #screen.blit(text, textRect)
+                    event = pygame.event.wait()
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                        break
             #Store
             if storeButton[0] <= mouse[0] <= storeButton[1] and storeButton[2] <= mouse[1] <= storeButton[3]:
                 #screenDisplay.switch(6)
