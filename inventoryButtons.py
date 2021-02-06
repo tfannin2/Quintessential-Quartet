@@ -39,13 +39,21 @@ def accessInventory(screen):
   for stock in currInventory:
     if stock[1] == True:
       if stock[0] == "hat":
-        screen.blit(pygame.image.load("Resources/baseballcap.png"),hatButton)
+        image_hat = pygame.image.load("Resources/baseballcap.png")
+        image_hat = pygame.transform.scale(image_hat, (76, 47))
+        screen.blit(image_hat, [33, 132])
       elif stock[0] == "tie":
-        screen.blit(pygame.image.load("Resources/tie.png"),tieButton)
+        image_tie = pygame.image.load("Resources/tie.png")
+        image_tie = pygame.transform.scale(image_tie, (55, 78))
+        screen.blit(image_tie, [44, 238])
       elif stock[0] == "bow tie":
-        screen.blit(pygame.image.load("Resources/bowtie.png"),bowTieButton)
+        image_bowTie = pygame.image.load("Resources/bowtie.png")
+        image_bowTie = pygame.transform.scale(image_bowTie, (77, 39))
+        screen.blit(image_bowTie, [265, 136])
       elif stock[0] == "bow":
-        screen.blit(pygame.image.load("Resources/hairbow.png"),hairBowButton)
+        image_hairBow = pygame.image.load("Resources/hairbow.png")
+        image_hairBow = pygame.transform.scale(image_hairBow, (75, 52))
+        screen.blit(image_hairBow, [151, 130])
 
   # defining a font
   smallfont = pygame.font.SysFont('Corbel', 35)
