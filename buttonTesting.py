@@ -81,16 +81,16 @@ while True:
             #Buttons!
             #Water
             if waterButton[0] <= mouse[0] <= waterButton[1]  and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-                points.drank_water() 
+                points.drank_water(screen) 
             #Eat
             if eatButton[0] <= mouse[0] <= eatButton[1] and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-                points.ate_food()
+                points.ate_food(screen)
             #Exercise
             if exerciseButton[0] <= mouse[0] <= exerciseButton[1] and topThreeLine[0] <= mouse[1] <= topThreeLine[1]: 
-                points.exercise()
+                points.exercise(screen)
             #Meditate
             if meditateButton[0] <= mouse[0] <= meditateButton[1] and medidtateLine[0] <= mouse[1] <= medidtateLine[1]:
-                points.meditate()
+                points.meditate(screen)
             #Daily Quote Reveal
             if dailyQuoteButton[0] <= mouse[0] <= dailyQuoteButton[1] and dailyQuoteButton[2] <= mouse[1] <= dailyQuoteButton[3]:
                 quote = points.daily_quote()
