@@ -1,6 +1,7 @@
 # import pygame and points images
 import pygame
 import images
+import random
 
 # global variables
 global user_points
@@ -17,19 +18,19 @@ def drank_water(screen):
 def ate_food(screen):
     global user_points
     user_points += 10
-    screen.blit(images.food,[92,175])
+    screen.blit(pygame.image.load("Resources/bone.png"),[92,175])
 
 def exercise(screen):
     global user_points
     user_points += 5
-    screen.blit(images.exercise,[44,150])
+    screen.blit(pygame.image.load("Resources/exercise.png"),[44,150])
 
-def meditatescreen():
+def meditate(screen):
     global user_points
     user_points += 5
-    screen.blit(images.meditate,[8,126])
+    screen.blit(pygame.image.load("Resources/Dog on rug.png"),[8,126])
 
-def daily_quote(screen):
+def daily_quote():
     """
     if !woke :
         user_points += 1

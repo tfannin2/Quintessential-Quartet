@@ -8,7 +8,7 @@ import points
 
 def initializeInventory():
     global inventory
-    inventory = [("hat", False), ("tie", False), ("bow tie", False), ("bow", False)]
+    inventory = [["hat", False], ["tie", False], ["bow tie", False], ["bow", False]]
 
 def makePurchase(item, cost):
     global inventory

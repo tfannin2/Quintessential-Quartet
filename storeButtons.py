@@ -54,8 +54,8 @@ def accessStore(screen):
                 if hatButton[0] <= mouse[0] <= (hatButton[0]+buttonWidth) and hatButton[1] <= mouse[1] <= (hatButton[1] + buttonHeight):
                     buyAnItem("hat", 100)
 
-                if bowTieButton[0] <= mouse[0] <= (bowTieButton[0]+buttonWidth) and botTieButton[1] <= mouse[1] <= (bowTieButton[1] + buttonHeight):
-                    buyAnItem("bow tie", 120)
+                if bowTieButton[0] <= mouse[0] <= (bowTieButton[0]+buttonWidth) and bowTieButton[1] <= mouse[1] <= (bowTieButton[1] + buttonHeight):
+                    buyAnItem("bow tie", 200)
 
                 if hairBowButton[0] <= mouse[0] <= (hairBowButton[0]+buttonWidth) and hairBowButton[1] <= mouse[1] <= (hairBowButton[1] + buttonHeight):
                     buyAnItem("bow", 120)
@@ -70,22 +70,9 @@ def accessStore(screen):
 
         mouse = pygame.mouse.get_pos()
 
-        pygame.draw.rect(screen, color_dark, [
-            hatButton[0], hatButton[1], buttonWidth, buttonHeight], 3)  # hat
 
-        pygame.draw.rect(screen, color_dark, [
-            bowTieButton[0], bowTieButton[1], buttonWidth, buttonHeight], 3)  # bowtie
-
-        pygame.draw.rect(screen, color_dark, [
-            hairBowButton[0], hairBowButton[1], buttonWidth, buttonHeight], 3)  # hairbow
-
-        pygame.draw.rect(screen, color_dark, [
-            tieButton[0], tieButton[1], buttonWidth, buttonHeight], 3)  # hairbow
-
-        pygame.draw.rect(screen, color_dark, [
-            backButton[0], backButton[1], buttonWidth/2, buttonHeight], 3)  # hairbow
-
-        # left, top, width, height pygame.draw.rect(screen, color, (x,y,width,height), thickness)
+        pointsText = smallfont.render(points.displayPonts(), True, color)
+        screen.blit(pointsText, (screen.get_width()/2 + 30, 35))
 
 
         # updates the frames of the game

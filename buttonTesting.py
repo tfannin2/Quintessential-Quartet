@@ -56,7 +56,7 @@ pointsText = smallfont.render(points.displayPonts(), True, color)
 
 
 #Test home screen image
-image = pygame.image.load(r'C:\Users\gmham\git-repos\quin\Quintessential-Quartet\Home.jpg')
+image = pygame.image.load('Resources/Home.png')
 
   
 while True: 
