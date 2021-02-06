@@ -5,6 +5,7 @@ import math
 #import screenDisplay
 import inventory
 import storeButtons
+import inventoryButtons
 
 pygame.init()
 
@@ -24,6 +25,9 @@ height = screen.get_height()
 
 #set up inventory for later
 inventory.initializeInventory()
+
+#Set up quotes variables
+points.initializeQuotesVariables()
 
 ####Calculating the button sizing#####
 #Top four buttons
@@ -112,7 +116,7 @@ while True:
                 storeButtons.accessStore(screen)
             #Inventory
             if inventoryButton[0] <= mouse[0] <= inventoryButton[1] and inventoryButton[2] <= mouse[1] <= inventoryButton[3]:
-                inventory.displayInventory()
+                inventoryButtons.accessInventory(screen)
     
 
                   
