@@ -4,6 +4,7 @@ import points
 import math
 #import screenDisplay
 import inventory
+import storeButtons
 
 pygame.init()
 
@@ -108,7 +109,7 @@ while True:
             #Store
             if storeButton[0] <= mouse[0] <= storeButton[1] and storeButton[2] <= mouse[1] <= storeButton[3]:
                 #screenDisplay.switch(6)
-                x = 1
+                storeButtons.accessStore(screen)
             #Inventory
             if inventoryButton[0] <= mouse[0] <= inventoryButton[1] and inventoryButton[2] <= mouse[1] <= inventoryButton[3]:
                 inventory.displayInventory()
