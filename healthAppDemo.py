@@ -2,10 +2,10 @@ def createPointStore():
     #Make the inventory
     global inventory
     inventory = []
-    inventory.append(["Baseball Hat", "25 points"])
-    inventory.append(["Tie", "30 points"])
-    inventory.append(["Hair Bow", "30 points"])
-    inventory.append(["Bow Tie", "50 points"])
+    inventory.append(["Baseball Hat", "100 points"])
+    inventory.append(["Tie", "120 points"])
+    inventory.append(["Hair Bow", "120 points"])
+    inventory.append(["Bow Tie", "200 points"])
 
 def visitPointStore():
 
