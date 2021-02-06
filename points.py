@@ -1,3 +1,6 @@
+# Global variables
+user_points = 0
+
 # Points awarded to the user for actions they complete
 def drank_water():
     user_points += 10
