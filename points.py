@@ -3,8 +3,9 @@ import pygame
 import images
 
 # global variables
-global user_points = 0
-woke = false                # PROBABLY RESETS EVERYTIME APP IS EXITED... FIX LATER
+global user_points
+user_points = 0
+#woke = false                # PROBABLY RESETS EVERYTIME APP IS EXITED... FIX LATER
 
 # points awarded to the user for actions they complete
 def drank_water():
@@ -28,9 +29,11 @@ def meditate():
     screen.blit(meditate,[8,126])
 
 def daily_quote():
+    """
     if !woke :
         user_points += 1
         woke = true
+    """
     #TODO: only allow points once a day
     quotesList = ["Whatever makes you happy, put that in your world.","We don't make mistakes, just happy little accidents.","Talent is a pursued interest.","The secret to doing anything is believing you can do it."]
     quotesIndex = random.randint(0,(len(quotesList) - 1))
