@@ -2,7 +2,7 @@ import os
 import sys
 import pygame
 from pygame.locals import *
-#import screenDisplay
+import screenDisplay
 import points
 
 
@@ -25,6 +25,7 @@ def makePurchase(item, cost):
 
 def displayInventory():
     #display inventory base image
+    screenDisplay.switch_screens(4)
 
     global inventory
     for stock in inventory:
