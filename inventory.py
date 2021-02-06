@@ -15,7 +15,7 @@ def initializeInventory(): # ("item",bought,wearing)
 def getInventory():
     global inventory
     return inventory
-    
+
 def makePurchase(item, cost):
     global inventory
     for stock in inventory:

@@ -35,18 +35,6 @@ def accessInventory(screen):
 
   currInventory = inventory.getInventory()
 
-  # Only show inventory images if user has previously bought the item.
-  for stock in currInventory:
-    if stock[1] == True:
-      if stock[0] == "hat":
-        screen.blit(pygame.image.load("Resources/baseballcap.png"),hatButton)
-      elif stock[0] == "tie":
-        screen.blit(pygame.image.load("Resources/tie.png"),tieButton)
-      elif stock[0] == "bow tie":
-        screen.blit(pygame.image.load("Resources/bowtie.png"),bowTieButton)
-      elif stock[0] == "bow":
-        screen.blit(pygame.image.load("Resources/hairbow.png"),hairBowButton)
-
   # defining a font
   smallfont = pygame.font.SysFont('Corbel', 35)
 
@@ -58,6 +46,26 @@ def accessInventory(screen):
 
   while True:
     screen.blit(image, (0, 0))
+
+    # Only show inventory images if user has previously bought the item.
+    for stock in currInventory:
+      if stock[1] == True:
+        if stock[0] == "hat":
+          hat_im = pygame.image.load("Resources/baseballcap.png")
+          screen.blit(pygame.transform.scale(hat_im, (133, 82)),(104,251))
+          pygame.display.update()
+        elif stock[0] == "tie":
+          tie_im = pygame.image.load("Resources/tie.png")
+          screen.blit(pygame.transform.scale(tie_im, (118, 167)),(104,362))
+          pygame.display.update()
+        elif stock[0] == "bow tie":
+          bowtie_im = pygame.image.load("Resources/bowtie.png")
+          screen.blit(pygame.transform.scale(bowtie_im, (88, 44)),(113,385))
+          pygame.display.update()
+        elif stock[0] == "bow":
+          hairbow_im = pygame.image.load("Resources/hairbow.png")
+          screen.blit(pygame.transform.scale(hairbow_im, (108, 75,)), (121,272))
+          pygame.display.update()
 
     for ev in pygame.event.get():
 
