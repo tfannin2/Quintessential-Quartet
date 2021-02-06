@@ -28,3 +28,17 @@ def displayPonts():
     global user_points
     return str(user_points)
 
+#Subtracts the points spent at the store from the overall points
+def makePurchase(cost):
+    global user_points
+
+    if user_points >= cost:
+        user_points -= cost
+        return True
+    else:
+        return False
+    
+        
+
+
+
