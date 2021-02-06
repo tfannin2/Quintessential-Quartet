@@ -6,16 +6,17 @@ from pygame.locals import *
 import points
 
 
-def initializeInventory(): # ("item",bought,wearing)
+def initializeInventory():  # ("item",bought,wearing)
     global inventory
-    inventory = [["hat", False, False], ["tie", False, False],["bow tie", False, False], ["bow", False, False]]
-
+    inventory = [["hat", False, False], ["tie", False, False],
+                 ["bow tie", False, False], ["bow", False, False]]
 
 
 def getInventory():
     global inventory
     return inventory
-    
+
+
 def makePurchase(item, cost):
     global inventory
     for stock in inventory:
@@ -28,13 +29,21 @@ def makePurchase(item, cost):
         elif stock[0] == item and stock[1] == True:
             return "previously bought"
 
-"""
+
 def displayInventory():
-    #display inventory base image
+    # display inventory base image
 
     global inventory
     for stock in inventory:
         if stock[1] == True:
-            #displayItem(stock[0])
+            # displayItem(stock[0])
             x = 1
-"""
+
+
+def checkInventory():
+    global inventory
+    for stock in inventory:
+        if stock[2] == True:
+            return stock[0]
+        else:
+            return False
