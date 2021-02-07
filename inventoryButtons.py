@@ -102,28 +102,40 @@ def accessInventory(screen):
         if hatButton[0] <= mouse[0] <= (hatButton[0]+buttonWidth) and hatButton[1] <= mouse[1] <= (hatButton[1] + buttonHeight):
           for stock in currInventory:
             if stock[0] == "hat":
-              stock[2] = True
+              if stock[1] == True:
+                  stock[2] = True
+              else:
+                stock[2] = False
             else:
               stock[2] = False
 
         if bowTieButton[0] <= mouse[0] <= (bowTieButton[0]+buttonWidth) and bowTieButton[1] <= mouse[1] <= (bowTieButton[1] + buttonHeight):
             for stock in currInventory:
               if stock[0] == "bow tie":
-                stock[2] = True
+                if stock[1] == True:
+                  stock[2] = True
+                else:
+                  stock[2] = False
               else:
                 stock[2] = False
 
         if hairBowButton[0] <= mouse[0] <= (hairBowButton[0]+buttonWidth) and hairBowButton[1] <= mouse[1] <= (hairBowButton[1] + buttonHeight):
             for stock in currInventory:
               if stock[0] == "bow":
-                stock[2] = True
+                if stock[1] == True:
+                  stock[2] = True
+                else:
+                  stock[2] = False
               else:
                 stock[2] = False
 
         if tieButton[0] <= mouse[0] <= (tieButton[0]+buttonWidth) and tieButton[1] <= mouse[1] <= (tieButton[1] + buttonHeight):
             for stock in currInventory:
               if stock[0] == "tie":
-                stock[2] = True
+                if stock[1] == True:
+                  stock[2] = True
+                else:
+                  stock[2] = False
               else:
                 stock[2] = False
 

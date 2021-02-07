@@ -81,16 +81,16 @@ while True:
         elif currentItem == "tie":
             tie_im = pygame.image.load("Resources/tie.png")
             tie_im = pygame.transform.scale(tie_im, (118, 167))
-            screen.blit(hat_im, [113, 228])
+            screen.blit(tie_im, [113, 228])
         elif currentItem == "bow":
             hairbow_im = pygame.image.load("Resources/hairbow.png")
             hairbow_im = pygame.transform.scale(hairbow_im, (108, 75))
-            screen.blit(hat_im, [130, 138])
+            screen.blit(hairbow_im, [130, 138])
             print("bow")
         elif currentItem == "bow tie":
             bowtie_im = pygame.image.load("Resources/bowtie.png")
             bowtie_im = pygame.transform.scale(bowtie_im, (88, 44))
-            screen.blit(hat_im, [122, 251])
+            screen.blit(bowtie_im, [122, 251])
         else:
             print("jfjfjjf")
 

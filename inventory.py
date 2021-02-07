@@ -44,7 +44,9 @@ def checkInventory():
     global inventory
     for stock in inventory:
         if stock[2] == True:
-              print(stock[0])
+            print(stock[0])
             return stock[0]
+        """
         else:
             return False
+        """
