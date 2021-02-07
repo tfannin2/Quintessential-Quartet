@@ -35,6 +35,14 @@ def drank_water(screen):
     screen.blit(drink, [32, 343])
     pygame.display.update()
 
+    pygame.display.update()
+    while True:
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            break
+
 
 def ate_food(screen):
     global user_points
@@ -43,13 +51,29 @@ def ate_food(screen):
     feed = pygame.transform.scale(feed, (152, 141))   # [left,top] = [92,175]
     screen.blit(feed, [92, 175])
 
+    pygame.display.update()
+    while True:
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            break
+
 
 def exercise(screen):
     global user_points
     user_points += 5
     dog_exercise = pygame.image.load("Resources/exercise.png")
     dog_exercise = pygame.transform.scale(dog_exercise, (305, 305))
-    screen.blit(dog_exercise, [44, 150])
+    screen.blit(dog_exercise, [44, 121])
+
+    pygame.display.update()
+    while True:
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            break
 
 
 def meditate(screen):
@@ -57,7 +81,15 @@ def meditate(screen):
     user_points += 5
     dog_meditate = pygame.image.load("Resources/Dog on rug.png")
     dog_meditate = pygame.transform.scale(dog_meditate, (381, 331))
-    screen.blit(dog_meditate, [8, 126])
+    screen.blit(dog_meditate, [8, 122])
+
+    pygame.display.update()
+    while True:
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            break
 
 
 def daily_quote():
