@@ -2,7 +2,7 @@ import os
 import sys
 import pygame
 from pygame.locals import *
-#import screenDisplay
+# import screenDisplay
 import points
 
 
@@ -15,6 +15,7 @@ def initializeInventory():  # ("item",bought,wearing)
 def getInventory():
     global inventory
     return inventory
+
 
 def makePurchase(item, cost):
     global inventory
@@ -43,6 +44,7 @@ def checkInventory():
     global inventory
     for stock in inventory:
         if stock[2] == True:
+              print(stock[0])
             return stock[0]
         else:
             return False
